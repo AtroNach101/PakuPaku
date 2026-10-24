@@ -80,9 +80,14 @@ func update_damage() -> void:
 				health += blocks[i]
 				if health <= 0:
 					health = 0
-					$Health.text = "Health: " + str(health)
-					_on_player_death()
 				$Health.text = "Health: " + str(health)
+	
+	## check gamestate
+	if $Enemy.health <= 0:
+		_on_enemy_death()
+	else:
+		if health <= 0:
+			on_player_death()
 
 func _on_end_turn_pressed() -> void:
 	
@@ -107,13 +112,12 @@ func _on_end_turn_pressed() -> void:
 		get_node(node_path).visible = !get_node(node_path).visible
 
 func _on_enemy_death() -> void:
-	print("win")
 	$WinMessage.text = "YOU WIN"
 	$WinMessage.visible = !$WinMessage.visible
 	$Restart.visible = !$Restart.visible
 	Engine.time_scale = 0
 
-func _on_player_death() -> void:
+func on_player_death() -> void:
 	$WinMessage.text = "YOU LOSE"
 	$WinMessage.visible = !$WinMessage.visible
 	$Restart.visible = !$Restart.visible

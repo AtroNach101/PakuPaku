@@ -32,6 +32,6 @@ func action(power: int = 0) -> Dictionary:
 func update_health(i: int)-> void:
 	health += i
 	if health <= 0:
-		health =0
-		emit_signal("death")
+		health = 0
+		##emit_signal("death")
 	$Label.text = str(health)
