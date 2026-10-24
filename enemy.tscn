@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ce6vlr1gy12rh"]
+
+[ext_resource type="Script" uid="uid://0rl37yw1tjo0" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_igqr0"]
+font_size = 64
+
+[node name="Enemy" type="Node2D" unique_id=390880573]
+script = ExtResource("1_7k104")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1208022137]
+offset_right = 512.0
+offset_bottom = 256.0
+color = Color(0.15984383, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1753603792]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 192.0
+text = "100"
+label_settings = SubResource("LabelSettings_igqr0")
+horizontal_alignment = 1
+vertical_alignment = 1

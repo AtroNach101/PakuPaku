@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b3xpokcke8g1n"]
+
+[ext_resource type="Script" uid="uid://c81h6jeair7h4" path="res://block.gd" id="1_im0tn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_igqr0"]
+font_size = 64
+
+[node name="Block" type="Node2D" unique_id=1471641106]
+script = ExtResource("1_im0tn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1494721563]
+offset_right = 256.0
+offset_bottom = 256.0
+color = Color(0.5370987, 0.5370987, 0.5370987, 1)
+
+[node name="Label" type="Label" parent="." unique_id=865085182]
+offset_right = 256.0
+offset_bottom = 256.0
+text = "0"
+label_settings = SubResource("LabelSettings_igqr0")
+horizontal_alignment = 1
+vertical_alignment = 1

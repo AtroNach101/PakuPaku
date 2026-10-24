@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bplk4f2uhjlav"]
+
+[ext_resource type="Script" uid="uid://c7vb3qw24egtf" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b3xpokcke8g1n" path="res://block.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ce6vlr1gy12rh" path="res://enemy.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b7s8fux1kjjc8" path="res://card_display.tscn" id="4_1bvp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_igqr0"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_p4vf7"]
+font_size = 128
+
+[node name="Main" type="Node2D" unique_id=1388889706]
+script = ExtResource("1_ig7tw")
+
+[node name="UL_Block" parent="." unique_id=1471641106 instance=ExtResource("2_0xm2m")]
+position = Vector2(285, 649)
+
+[node name="UR_Block" parent="." unique_id=1194517366 instance=ExtResource("2_0xm2m")]
+position = Vector2(549, 649)
+
+[node name="DL_Block" parent="." unique_id=791939150 instance=ExtResource("2_0xm2m")]
+position = Vector2(285, 913)
+
+[node name="DR_Block" parent="." unique_id=1931462368 instance=ExtResource("2_0xm2m")]
+position = Vector2(549, 913)
+
+[node name="Enemy" parent="." unique_id=390880573 instance=ExtResource("3_h2yge")]
+position = Vector2(295, 162)
+
+[node name="Card1" parent="." unique_id=1850258710 instance=ExtResource("4_1bvp3")]
+position = Vector2(128, 1344)
+
+[node name="Card2" parent="." unique_id=246700513 instance=ExtResource("4_1bvp3")]
+position = Vector2(344, 1344)
+
+[node name="Card3" parent="." unique_id=295644924 instance=ExtResource("4_1bvp3")]
+position = Vector2(560, 1344)
+
+[node name="Card4" parent="." unique_id=1355934832 instance=ExtResource("4_1bvp3")]
+position = Vector2(776, 1344)
+
+[node name="End Turn" type="Button" parent="." unique_id=905170803]
+offset_left = 440.0
+offset_top = 1664.0
+offset_right = 656.0
+offset_bottom = 1786.0
+theme_override_font_sizes/font_size = 32
+text = "End Turn"
+
+[node name="Health" type="Label" parent="." unique_id=795693123]
+offset_left = 128.0
+offset_top = 1200.0
+offset_right = 968.0
+offset_bottom = 1304.0
+text = "Health: 100"
+label_settings = SubResource("LabelSettings_igqr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1240849268]
+
+[node name="WinMessage" type="Label" parent="." unique_id=842038102]
+visible = false
+offset_top = 417.0
+offset_right = 1080.0
+offset_bottom = 1433.0
+text = "YOU WIN"
+label_settings = SubResource("LabelSettings_p4vf7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="." unique_id=882082641]
+visible = false
+offset_left = 272.0
+offset_top = 1328.0
+offset_right = 825.0
+offset_bottom = 1596.0
+theme_override_font_sizes/font_size = 72
+text = "Restart"
+
+[connection signal="pressed" from="End Turn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://b7s8fux1kjjc8"]
+
+[ext_resource type="Script" uid="uid://di8hv5qwlqwfq" path="res://card_display.gd" id="1_kikvd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_igqr0"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_p4vf7"]
+font_size = 28
+
+[node name="Card" type="Node2D" unique_id=1850258710]
+script = ExtResource("1_kikvd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1872075080]
+offset_right = 192.0
+offset_bottom = 192.0
+color = Color(0, 0.35686275, 0.44705883, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1117389357]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 56.0
+color = Color(0.011764706, 0, 0.25882354, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=916538005]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 136.0
+offset_right = 192.0
+offset_bottom = 192.0
+color = Color(0.011764706, 0, 0.25882354, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect" unique_id=1703738633]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 56.0
+offset_bottom = 192.0
+color = Color(0.011764706, 0, 0.25882354, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect" unique_id=1838499685]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 192.0
+offset_bottom = 56.0
+color = Color(0.011764706, 0, 0.25882354, 1)
+
+[node name="UL" type="Label" parent="." unique_id=1917110068]
+offset_right = 56.0
+offset_bottom = 56.0
+text = "0"
+label_settings = SubResource("LabelSettings_igqr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DR" type="Label" parent="." unique_id=574301634]
+offset_left = 136.0
+offset_top = 136.0
+offset_right = 192.0
+offset_bottom = 192.0
+text = "0"
+label_settings = SubResource("LabelSettings_igqr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DL" type="Label" parent="." unique_id=719828480]
+offset_top = 136.0
+offset_right = 56.0
+offset_bottom = 192.0
+text = "0"
+label_settings = SubResource("LabelSettings_igqr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UR" type="Label" parent="." unique_id=1285789004]
+offset_left = 136.0
+offset_right = 192.0
+offset_bottom = 56.0
+text = "0"
+label_settings = SubResource("LabelSettings_igqr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="." unique_id=556480869]
+custom_maximum_size = Vector2(192, 80)
+offset_top = 56.0
+offset_right = 192.0
+offset_bottom = 136.0
+text = "Default"
+label_settings = SubResource("LabelSettings_p4vf7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1471179593]
+offset_right = 192.0
+offset_bottom = 192.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
